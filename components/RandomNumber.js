@@ -5,7 +5,6 @@ const RandomNumber = props => {
   handlePress = () => {
     console.log(props.number);
   };
-  console.log(`number`);
   return (
     <TouchableOpacity onPress={handlePress}>
       <Text style={styles.random}>{props.number}</Text>

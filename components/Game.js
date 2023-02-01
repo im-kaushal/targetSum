@@ -8,26 +8,20 @@ const Game = props => {
     () => 1 + Math.floor(10 * Math.random()),
   );
 
-  console.log(`Hey ${randomNumbers}`);
+  console.log(`${randomNumbers}`);
 
   target = randomNumbers
     .slice(0, props.randomNumberCount - 2)
     .reduce((acc, curr) => acc + curr, 0);
-
   // TODO: Suffle the numbers
-  console.log(`Hi ${target}`);
+  // console.log(`Hi ${target}`);
   return (
     <View style={styles.container}>
       <Text style={styles.target}> {target} </Text>
       <View style={styles.randomContainer}>
-        {randomNumbers.map(
-          (randomNumber, index) => (
-            <RandomNumber key={index} number={randomNumber} />
-          ),
-          /* <Text style={styles.random} key={index}>
-            {randomNumber}
-          </Text> */
-        )}
+        {randomNumbers.map((randomNumber, index) => (
+          <RandomNumber key={index} number={randomNumber} />
+        ))}
       </View>
     </View>
   );
