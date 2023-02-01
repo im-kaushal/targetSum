@@ -5,9 +5,12 @@ const RandomNumber = props => {
   handlePress = () => {
     console.log(props.number);
   };
+
   return (
     <TouchableOpacity onPress={handlePress}>
-      <Text style={styles.random}>{props.number}</Text>
+      <Text style={(styles.random, props.isSelected && styles.selected)}>
+        {props.number}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -20,6 +23,9 @@ const styles = StyleSheet.create({
     marginVertical: 25,
     fontSize: 35,
     textAlign: 'center',
+  },
+  selected: {
+    opacity: 0.5,
   },
 });
 
