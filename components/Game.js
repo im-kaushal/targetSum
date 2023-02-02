@@ -15,7 +15,7 @@ const Game = props => {
     () => 1 + Math.floor(10 * Math.random()),
   );
 
-  console.warn(`Hey ${randomNumbers}`);
+  console.log(`Hey ${randomNumbers}`);
 
   target = randomNumbers
     .slice(0, props.randomNumberCount - 2)
@@ -30,7 +30,7 @@ const Game = props => {
       selectedNumbers: [...prevState.selectedNumbers, numberIndex],
     }));
   };
-  console.warn(`Hi ${target}`);
+  console.log(`Hi ${target}`);
   return (
     <View style={styles.container}>
       <Text style={styles.target}> {target} </Text>
@@ -53,7 +53,6 @@ const Game = props => {
     </View>
   );
 };
-console.warn(id);
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#ddd',
